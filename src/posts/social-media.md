@@ -114,3 +114,6 @@ Unhook - Remove youtube recommended ...
 Reddit promoted ad blocker
 
 DF Youtube
+
+
+-Written 07/14/2026 by Spencer Lee
