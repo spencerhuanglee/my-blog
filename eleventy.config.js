@@ -8,6 +8,7 @@ export default function (eleventyConfig) {
     "**/posts/.makemd/**",
     "**/posts/.space/**",
     "**/posts/Tags/**",
+    "**/posts/Templates/**",
   ]) {
     eleventyConfig.ignores.add(pattern);
   }
@@ -18,7 +19,8 @@ export default function (eleventyConfig) {
       path.includes("/posts/") &&
       path.endsWith(".md") &&
       !path.includes("/.") &&
-      !path.includes("/Tags/")
+      !path.includes("/Tags/") &&
+      !path.includes("/Templates/")
     );
   }
 
