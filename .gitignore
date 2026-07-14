@@ -1,3 +1,10 @@
 _site/
 node_modules/
 .DS_Store
+
+# Obsidian vault junk (not blog content)
+.obsidian/
+.trash/
+.makemd/
+.space/
+**/Tags/

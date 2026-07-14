@@ -1,0 +1,49 @@
+---
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.allFolders
+  size: 1
+  alias: folder
+permalink: "{{ folder }}/index.html"
+layout: base.njk
+eleventyComputed:
+  title: "Index of /blog/{{ folder }}"
+---
+<h1>Index of /blog/{{ folder }}</h1>
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Filename</th>
+            <th>Size</th>
+            <th>Last Modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><a href="{{ folder | parentHref }}"><span>📁</span> ..</a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        {%- for child in collections.allFolders | childFolders(folder) %}
+        <tr>
+            <td><a href="/{{ child }}/"><span>📁</span> {{ child.split('/').pop() }}/</a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        {%- endfor %}
+        {%- for post in collections.posts | postsInFolder(folder) %}
+        <tr>
+            <td><a href="{{ post.url }}"><span>📄</span> {{ post | postBasename }}.html</a></td>
+            <td>{{ post.templateContent | filesize }}</td>
+            <td>{{ (post.date or post.data.date) | apacheDate }}</td>
+        </tr>
+        {%- endfor %}
+    </tbody>
+</table>
+
+<hr>
+<div class="footer-text">
+    Bioengineer, Aristocrat of the Soul | <a href="mailto:spencerhuanglee@gmail.com">contact</a>
+</div>

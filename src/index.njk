@@ -20,9 +20,16 @@ permalink: /
             <td>-</td>
             <td>-</td>
         </tr>
-        {%- for post in collections.posts | reverse %}
+        {%- for folder in collections.rootFolders %}
         <tr>
-            <td><a href="{{ post.url }}"><span>📄</span> {{ post.fileSlug }}.html</a></td>
+            <td><a href="/{{ folder }}/"><span>📁</span> {{ folder }}/</a></td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        {%- endfor %}
+        {%- for post in collections.rootPosts %}
+        <tr>
+            <td><a href="{{ post.url }}"><span>📄</span> {{ post | postBasename }}.html</a></td>
             <td>{{ post.templateContent | filesize }}</td>
             <td>{{ (post.date or post.data.date) | apacheDate }}</td>
         </tr>

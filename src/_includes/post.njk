@@ -1,7 +1,13 @@
 ---
 layout: base.njk
 ---
-<a href="{{ '/' | url }}">← Back to Index</a>
+{%- set path = page.inputPath.split("/posts/")[1] -%}
+{%- set parts = path.replace(".md", "").split("/") -%}
+{%- if parts.length > 1 -%}
+<a href="/{{ parts.slice(0, -1).join("/") }}/">← Back</a>
+{%- else -%}
+<a href="/">← Back to Index</a>
+{%- endif %}
 <hr>
 <article class="post-body">
     <h1>{{ title }}</h1>

@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
+    "build": "rm -rf _site && eleventy",
+    "start": "rm -rf _site && eleventy --serve",
     "new": "node scripts/new-post.js"
   },
   "devDependencies": {
