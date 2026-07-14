@@ -1,0 +1,13 @@
+{
+  "obsidian-transparent@@preset-mode": "preset-true-glass",
+  "obsidian-transparent@@glass-opacity": 0.43,
+  "obsidian-transparent@@ui-blur": 89,
+  "obsidian-transparent@@background-blur": 200,
+  "obsidian-transparent@@bg-tint-opacity": 0,
+  "obsidian-transparent@@bg-tint-color": "#5E4F47",
+  "obsidian-transparent@@disable-modal-animation": false,
+  "obsidian-transparent@@accent-everywhere": false,
+  "obsidian-transparent@@default-sync-error": false,
+  "obsidian-transparent@@border-opacity": 0.063,
+  "obsidian-transparent@@file-line-width": 700
+}
